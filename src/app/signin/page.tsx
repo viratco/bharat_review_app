@@ -18,7 +18,7 @@ export default function SignInPage() {
         {/* This div groups all the content that should stay at the top */}
         <div>
           <h1>Welcome Back, BharatReviews!</h1>
-          <p className={styles.subheading}>We're thrilled to have you back! Log in to Shopio and shop till you drop.</p>
+          <p className={styles.subheading}>We&apos;re thrilled to have you back! Log in to Shopio and shop till you drop.</p>
 
           <div className={styles.formField}>
             <div className={styles.inputContainer}>

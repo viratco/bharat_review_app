@@ -56,6 +56,7 @@ export default function OnboardingPage() {
               <button
                 key={i}
                 className={i === index ? styles.dotActive : styles.dot}
+                role="tab"
                 aria-selected={i === index}
                 aria-label={`Go to slide ${i + 1}`}
                 onClick={() => goTo(i)}
@@ -69,7 +70,7 @@ export default function OnboardingPage() {
           Shopping Joy!
         </h1>
         <p className={styles.subheading}>
-          Let's start exploring featured products and services find the ones that meet your needs.
+          Let&apos;s start exploring featured products and services find the ones that meet your needs.
         </p>
         <button className={styles.ctaButton}>Get Started</button>
       </main>
