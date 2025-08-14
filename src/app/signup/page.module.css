@@ -1,0 +1,315 @@
+.page {
+  --gray-rgb: 0, 0, 0;
+  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
+  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+
+  display: grid;
+  grid-template-rows: 20px 1fr 20px;
+  align-items: start; /* Align content to the top */
+  justify-items: center;
+  min-height: 100svh;
+  padding: 24px; /* keep as a base padding */
+  padding-left: calc(24px + env(safe-area-inset-left));
+  padding-right: calc(24px + env(safe-area-inset-right));
+  box-sizing: border-box;
+  gap: 24px; /* mobile-first */
+  font-family: var(--font-geist-sans);
+  
+}
+
+/* Email sign-in button */
+.emailButton {
+  display: flex;
+  width: 100%; /* mobile-first full-width */
+  max-width: 366px; /* cap width */
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px; /* space from divider */
+  border-radius: 32px;
+  background: var(--Red, #BF3F3F);
+  box-shadow: 0 5px 20px 0 rgba(49, 49, 49, 0.05);
+
+  /* sensible defaults */
+  color: var(--White, #FCFCFC);
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  align-self: center; /* center with fixed width in column layout */
+}
+
+.signupPrompt {
+  color: var(--Dark-Black, #343434);
+  text-align: center;
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 24px; /* space from button */
+}
+
+.signupLink {
+  color: var(--Red, #BF3F3F);
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700; /* H6 weight */
+  line-height: normal;
+  text-decoration: none;
+  margin-left: 6px; /* small gap after the question */
+}
+
+.signupLink:hover,
+.signupLink:focus {
+  text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+  }
+}
+
+.main {
+  padding-top: 30vh; /* Moved content down */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* reduced mobile-first gap */
+  grid-row-start: 2;
+  width: 100%;
+  max-width: 420px; /* Set a max-width to contain the content */
+}
+
+.main ol {
+  font-family: var(--font-geist-mono);
+  padding-left: 0;
+  margin: 0;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  list-style-position: inside;
+}
+
+.main li:not(:last-of-type) {
+  margin-bottom: 8px;
+}
+
+.main code {
+  font-family: inherit;
+  background: var(--gray-alpha-100);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.ctas {
+  display: flex;
+  gap: 16px;
+}
+
+.ctas a {
+  appearance: none;
+  border-radius: 128px;
+  height: 48px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+a.primary {
+  background: var(--foreground);
+  color: var(--background);
+  gap: 8px;
+}
+
+a.secondary {
+  border-color: var(--gray-alpha-200);
+  min-width: 158px;
+}
+
+.footer {
+  grid-row-start: 3;
+  display: flex;
+  gap: 24px;
+}
+
+.footer a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer img {
+  flex-shrink: 0;
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  a.primary:hover {
+    background: var(--button-primary-hover);
+    border-color: transparent;
+  }
+
+  a.secondary:hover {
+    background: var(--button-secondary-hover);
+    border-color: transparent;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  .logo {
+    filter: invert();
+  }
+}
+
+/* Tagline text style */
+.tagline {
+  align-self: stretch;
+  color: var(--Dark-Black, #343434);
+  text-align: center;
+
+  /* Paragraph 1 */
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  font-size: 14px; /* mobile-first */
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* Headline text style */
+.headline {
+  align-self: stretch;
+  color: var(--Dark-Black, #343434);
+  text-align: center;
+
+  /* H1 */
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  font-size: 28px; /* mobile-first */
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%; /* 46.8px */
+}
+
+/* Tighten spacing between headline and the next paragraph */
+.headline {
+  margin-bottom: 0;
+}
+
+.headline + .tagline {
+  margin-top: 0;
+}
+
+/* Google signup button */
+.googleButton {
+  display: flex;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch; /* full-width on mobile */
+
+  border-radius: 32px;
+  border: 2px solid var(--Red, #BF3F3F);
+  background: var(--White, #FCFCFC);
+  backdrop-filter: blur(10px);
+
+  /* sensible defaults */
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: var(--Dark-Black, #343434);
+  cursor: pointer;
+}
+
+/* remove default button styling inconsistencies */
+.googleButton {
+  appearance: none;
+  -webkit-appearance: none;
+  border-image: initial;
+}
+
+/* Container to group auth buttons without space between them */
+.authButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* small spacing between Google and Apple buttons */
+  align-self: stretch;
+}
+
+/* OR divider */
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px; /* mobile-first */
+  align-self: stretch;
+}
+
+.dividerLine {
+  flex: 1 0 0;
+  height: 2px; /* keep the line at 2px height, avoid stretching */
+}
+
+.dividerText {
+  color: var(--Dark-Black, #343434);
+  text-align: center;
+
+  /* Paragraph 1 */
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1; /* normalize to center with 2px lines */
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Apple login button (same look as Google) */
+.appleButton {
+  display: flex;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch; /* full-width on mobile */
+
+  border-radius: 32px;
+  border: 2px solid var(--Red, #BF3F3F);
+  background: var(--White, #FCFCFC);
+  backdrop-filter: blur(10px);
+
+  font-family: var(--font-poppins), Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: var(--Dark-Black, #343434);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border-image: initial;
+}
